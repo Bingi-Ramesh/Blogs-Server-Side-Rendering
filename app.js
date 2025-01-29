@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express=require("express")
 const path=require("path")
 const mongoose=require("mongoose")
@@ -10,9 +12,9 @@ const { checkForAuthenticationCookie } = require("./middlewares/authentication.j
 
 const app=express()
 
-const PORT=8000;
+const PORT=process.env.PORT || 8000;
 
-mongoose.connect("mongodb://localhost:27017/piyush-blogify")
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("mongodb is connected..."))
 .catch(()=>console.log("failed to connect mongodb..."))
 
