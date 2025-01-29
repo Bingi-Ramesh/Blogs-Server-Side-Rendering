@@ -1,0 +1,3 @@
+// npm i jsonwebtoken
+create services folder and authentication.js file
+complete authentication.js file and in models use it 
